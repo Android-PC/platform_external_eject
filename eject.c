@@ -48,7 +48,9 @@
 #include <getopt.h>
 #endif /* GETOPTLONG */
 #include <errno.h>
+#ifndef ANDROID
 #include <regex.h>
+#endif
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
@@ -69,9 +71,11 @@
 #include <linux/ucdrom.h>
 #endif
 #include <linux/fd.h>
+#ifndef ANDROID
 #include <scsi/scsi.h>
 #include <scsi/sg.h>
 #include <scsi/scsi_ioctl.h>
+#endif
 #include <sys/time.h>
 
 /* Used by the ToggleTray() function. If ejecting the tray takes this
@@ -91,7 +95,9 @@
     exit(1); \
 }
 
+#ifndef ANDROID
 #define HAVE_EJECT_SCSI
+#endif
 #define HAVE_EJECT_FLOPPY
 #define HAVE_EJECT_TAPE
 
