@@ -77,6 +77,7 @@
 #include <scsi/scsi_ioctl.h>
 #endif
 #include <sys/time.h>
+#include <sys/sysmacros.h>
 
 /* Used by the ToggleTray() function. If ejecting the tray takes this
  * time or less, the tray was probably already ejected, so we close it
